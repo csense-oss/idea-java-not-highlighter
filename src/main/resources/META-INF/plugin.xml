@@ -1,0 +1,31 @@
+<idea-plugin>
+    <id>csense.idea.java-not-highlighter</id>
+    <name>Csense - Java Not Highlighter</name>
+    <vendor email="csense@tvedesys.dk" url="https://github.com/csense-oss/idea-java-not-highlighter">
+        Csense oss
+    </vendor>
+
+
+    <description>A plugin allowing to highlight "not" and "!" alike in code.</description>
+
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <annotator language="JAVA"
+                   implementationClass="csense.java.not.highlighter.NotNameAnnotator"/>
+
+        <applicationService
+                serviceImplementation="csense.java.not.highlighter.settings.NotHighlighterSettings"/>
+        <applicationConfigurable
+                instance="csense.java.not.highlighter.settings.NotHighlighterSettingsConfigurable"/>
+
+    </extensions>
+    <actions>
+    </actions>
+    <projectListeners>
+        <listener
+                class="csense.java.not.highlighter.file.FileContentListener"
+                topic="com.intellij.openapi.vfs.newvfs.BulkFileListener"/>
+    </projectListeners>
+</idea-plugin>
