@@ -21,7 +21,7 @@ repositories {
 val javaVersion = "21"
 
 group = "csense-idea"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -60,7 +60,11 @@ intellijPlatform {
     pluginConfiguration {
         //language=html
         changeNotes = """
-            Initial version based on the kotlin version
+            Whats new
+            <ul>
+            <li>Added "no" and "ignore" to builtin negative names</li>
+            <li>Added more types of expression to highlight (operations)</li>
+            </ul>
         """.trimIndent()
         ideaVersion {
             sinceBuild = "243"
