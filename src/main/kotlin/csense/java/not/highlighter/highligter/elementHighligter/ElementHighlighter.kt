@@ -87,5 +87,11 @@ private fun ElementHighlighter.Companion.highlighterBy(
         highlighterStrategy = highlighterStrategy
     )
 
+    is PsiBinaryExpression -> PsiBinaryExpressionHighlighter(
+        element = element,
+        settings = settings,
+        highlighterStrategy = highlighterStrategy
+    )
+
     else -> NoOpHighlighter
 }

@@ -7,8 +7,8 @@ import csense.java.not.highlighter.highligter.elementHighligter.*
 import csense.java.not.highlighter.highligter.elementHighligter.settings.*
 import csense.java.not.highlighter.settings.*
 
-class PsiUnaryExpressionHighlighter(
-    private val element: PsiUnaryExpression,
+class PsiBinaryExpressionHighlighter(
+    private val element: PsiBinaryExpression,
     private val settings: NotHighlighterSettings,
     private val highlighterStrategy: AnnotationHolderHighlighterStrategy,
 ) : ElementHighlighter {
