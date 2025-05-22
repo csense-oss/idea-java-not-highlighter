@@ -81,7 +81,13 @@ private fun ElementHighlighter.Companion.highlighterBy(
         highlighterStrategy = highlighterStrategy
     )
 
-    is PsiJavaToken -> PsiJavaTokenHighlighter(
+    is PsiUnaryExpression -> PsiUnaryExpressionHighlighter(
+        element = element,
+        settings = settings,
+        highlighterStrategy = highlighterStrategy
+    )
+
+    is PsiBinaryExpression -> PsiBinaryExpressionHighlighter(
         element = element,
         settings = settings,
         highlighterStrategy = highlighterStrategy
